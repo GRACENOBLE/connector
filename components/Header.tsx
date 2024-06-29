@@ -1,44 +1,23 @@
-import NextLogo from "./NextLogo";
-import SupabaseLogo from "./SupabaseLogo";
+import Image from "next/image";
 
 export default function Header() {
   return (
-    <div className="flex flex-col gap-16 items-center">
-      <div className="flex gap-8 justify-center items-center">
-        <a
-          href="https://supabase.com/?utm_source=create-next-app&utm_medium=template&utm_term=nextjs"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <SupabaseLogo />
-        </a>
-        <span className="border-l rotate-45 h-6" />
-        <a href="https://nextjs.org/" target="_blank" rel="noreferrer">
-          <NextLogo />
-        </a>
+    <div className="border group/sidebar py-4 h-screen absolute left-0 top-0 w-20 hover:w-72 transition-all ease-in-out duration-200">
+      <div className="flex gap-4">
+        <div className="bg-white absolute ps-4">
+          <Image
+            src={"/images/icon.png"}
+            alt={""}
+            width={1000}
+            height={1000}
+            className="w-10"
+          />
+        </div>
+
+        <div className="mt-2 -z-10 text-transparent translate-x-2 group-hover/sidebar:text-black group-hover/sidebar:translate-x-16 group-hover/sidebar:transition-all group-hover/sidebar:ease-in-out group-hover/sidebar:duration-300 transition-all ease-in-out duration-300">
+          Connector
+        </div>
       </div>
-      <h1 className="sr-only">Supabase and Next.js Starter Template</h1>
-      <p className="text-3xl lg:text-4xl !leading-tight mx-auto max-w-xl text-center">
-        The fastest way to build apps with{" "}
-        <a
-          href="https://supabase.com/?utm_source=create-next-app&utm_medium=template&utm_term=nextjs"
-          target="_blank"
-          className="font-bold hover:underline"
-          rel="noreferrer"
-        >
-          Supabase
-        </a>{" "}
-        and{" "}
-        <a
-          href="https://nextjs.org/"
-          target="_blank"
-          className="font-bold hover:underline"
-          rel="noreferrer"
-        >
-          Next.js
-        </a>
-      </p>
-      <div className="w-full p-[1px] bg-gradient-to-r from-transparent via-foreground/10 to-transparent my-8" />
     </div>
   );
 }
